@@ -1151,7 +1151,7 @@
 
                 selectHour: function (e) {
                     // If user clicked in the background
-                   	if (e.target.tagName != "TD") {
+                   	if (e.target.tagName != "TD" || !$(e.target).hasClass("hour")) {
                       		return;
             	       }
                     var hour = parseInt($(e.target).text(), 10);
@@ -1173,7 +1173,7 @@
 
                 selectMinute: function (e) {
                     // If user clicked in the background
-                   	if (e.target.tagName != "TD") {
+                   	if (e.target.tagName != "TD" || !$(e.target).hasClass("minute")) {
                       		return;
             	       }
                     setValue(date.clone().minutes(parseInt($(e.target).text(), 10)));
@@ -1182,7 +1182,7 @@
 
                 selectSecond: function (e) {
                     // If user clicked in the background
-                   	if (e.target.tagName != "TD") {
+                   	if (e.target.tagName != "TD" || !$(e.target).hasClass("second")) {
                       		return;
             	       }
                     setValue(date.clone().seconds(parseInt($(e.target).text(), 10)));
