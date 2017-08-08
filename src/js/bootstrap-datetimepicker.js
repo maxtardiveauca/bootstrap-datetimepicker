@@ -1150,6 +1150,10 @@
                 },
 
                 selectHour: function (e) {
+                    // If user clicked in the background
+                   	if (e.target.tagName != "TD") {
+                      		return;
+            	       }
                     var hour = parseInt($(e.target).text(), 10);
 
                     if (!use24Hours) {
@@ -1168,11 +1172,19 @@
                 },
 
                 selectMinute: function (e) {
+                    // If user clicked in the background
+                   	if (e.target.tagName != "TD") {
+                      		return;
+            	       }
                     setValue(date.clone().minutes(parseInt($(e.target).text(), 10)));
                     actions.showPicker.call(picker);
                 },
 
                 selectSecond: function (e) {
+                    // If user clicked in the background
+                   	if (e.target.tagName != "TD") {
+                      		return;
+            	       }
                     setValue(date.clone().seconds(parseInt($(e.target).text(), 10)));
                     actions.showPicker.call(picker);
                 },
